@@ -1,0 +1,43 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+//sort the array with even and odd numbers seperately
+
+function sorting(arr){
+     let even = []
+     let odd = []
+     console.log(arr)
+     for(let i in arr){
+         if(arr[i]%2===0){
+             even.push(arr[i])
+         }
+         else{
+             odd.push(arr[i])
+         }
+     }
+     console.log(even)
+     console.log(odd)
+     for(let i=0;i<even.length;i++){
+          for(let j=0;j<even.length-i-1;j++)
+          {
+              if(even[j]>even[j+1]){
+                  temp = even[j]
+                  even[j]=even[j+1]
+                  even[j+1]=temp
+              }
+          }
+     }
+     
+       for(let i=0;i<odd.length;i++){
+          for(let j=0;j<odd.length-i-1;j++)
+          {
+              if(odd[j]>odd[j+1]){
+                  temp = odd[j]
+                  odd[j]=odd[j+1]
+                  odd[j+1]=temp
+              }
+          }
+     }
+   return[...even,...odd]
+}
+let arr=[3, 8, 6, 1, 7]
+console.log(sorting(arr))
