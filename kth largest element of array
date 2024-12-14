@@ -1,0 +1,29 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+//return kth largest element
+
+function sorting(arr,k){
+       let swapped=false
+       let n=arr.length
+       let lar=n-k
+     for(let i=0;i<arr.length;i++){
+          for(let j=0;j<arr.length-i-1;j++)
+          {
+              if(arr[j]>arr[j+1]){
+                  temp = arr[j]
+                  arr[j]=arr[j+1]
+                  arr[j+1]=temp
+                  swapped=true
+              }
+          }
+          if(!swapped){
+              break
+          }
+     }
+     
+       
+   return arr[lar]
+}
+let arr=[3, 2, 1, 5, 6, 4]
+let k=2
+console.log(sorting(arr,k))
