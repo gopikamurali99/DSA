@@ -1,0 +1,27 @@
+//to check an array is sorted or not
+// return true if sorted return false if not sorted
+
+
+function sorting(even){
+       let swapped=false
+     for(let i=0;i<even.length;i++){
+          for(let j=0;j<even.length-i-1;j++)
+          {
+              if(even[j]>even[j+1]){
+                  temp = even[j]
+                  even[j]=even[j+1]
+                  even[j+1]=temp
+                  swapped=true
+              }
+          }
+          if(!swapped){
+              return true
+          }
+     }
+     
+       
+   return false
+}
+let arr=[4,0, 3, 1,5 ]
+console.log(sorting(arr))
+
