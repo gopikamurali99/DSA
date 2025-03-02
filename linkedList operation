@@ -1,0 +1,68 @@
+Compiler
+//creating a new node
+function Node(value){
+    return {data:value,next:null}
+}
+
+//insert a node at End
+function insertAtEnd(head,value){
+    const newNode = Node(value)
+    
+    if(!head){
+        return newNode;
+    }
+    
+    let current = head
+    while(current.next){
+        current = current.next
+    }
+    current.next = newNode;
+    return head
+}
+//insert node at beginning
+function insertAtBeg(head,value){
+    const newNode = Node(value)
+    newNode.next = head;
+    return newNode
+}
+//insert a node at position
+function insertAtPos(head,pos,value){
+  const newNode = Node(value)
+  if(pos === 0){
+      newNode.next = head
+      return newN
+  }
+  let current = head
+  let index = 0
+  while(current.next && index<pos-1){
+      current = current.next
+      index++
+  }
+  if(!current){
+      console.log("position out of bound")
+      return head
+  }
+  newNode.next = current.next
+  current.next = newNode
+  
+  return head
+}
+//print list
+function printList(head){
+    let current = head;
+    let list = ""
+    while(current){
+        list += current.data+"->"
+        current = current.next
+    }
+    console.log(list+"null")
+}
+
+let head = Node(10)
+head = insertAtEnd(head,20)
+head = insertAtEnd(head,30)
+head = insertAtEnd(head,40)
+head = insertAtBeg(head,50)
+head = insertAtPos(head,2,60)
+printList(head)
+console.log(head)
